@@ -1,13 +1,11 @@
-'use strict'
-// Update with your config settings.
+'use strict';
 
-client: 'postgres',
-connection: {
-  host     : process.env.APP_DB_HOST     || '127.0.0.1',
-  user     : process.env.APP_DB_USER     || '',
-  password : process.env.APP_DB_PASSWORD || '',
-  database : process.env.APP_DB_NAME     || 'microblog'
-}
+var connection = process.env.DATABASE_URL || {
+  host     : process.env.DATABASE_HOST     || '127.0.0.1',
+  user     : process.env.DATABASE_USER     || '',
+  password : process.env.DATABASE_PASSWORD || '',
+  database : process.env.DATABASE_NAME     || 'microbloggy'
+};
 
 module.exports = {
 
